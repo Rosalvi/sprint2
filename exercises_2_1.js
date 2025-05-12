@@ -17,7 +17,7 @@ const printNumbers = numbers => {
   });
 };
 
-const saludo = setTimeout(() => {
+const saludoTimer = setTimeout(() => {
   console.log('Hola saludo');
 }, 3000);
 
@@ -81,7 +81,7 @@ const calculadora = (a, b, suma) => {
 
 console.log("calculadora", calculadora(1, 2, add));
 
-const esperarIsaludar = (nombre, callback) => {
+const esperarISaludar = (nombre, callback) => {
   setTimeout(() => {
     callback(nombre);
   }, 2000);
@@ -91,9 +91,9 @@ const saludar = nombre => {
   console.log(`Hola ${nombre}`);
 };
 
-console.log(esperarIsaludar('Juan', saludar));
+console.log(esperarISaludar('Juan', saludar));
 
-processarElements = (array, callback) => {
+const processarElements = (array, callback) => {
   array.forEach(element => {
     callback(element);
   });
@@ -193,9 +193,9 @@ const totalArray = [13, 7, 8, 21].reduce((total, x) => total + x, 0);
 
 console.log(totalArray)
 
-transformArray = [1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]
+const transformArray = [1, 3, 7, 10 ,15, 17, 11, 5, 8, 12, 9 ]
 
-transformedArray = transformArray.filter(x => x >= 10).map(x => x*2).reduce((total, x) => total + x, 0);
+const transformedArray = transformArray.filter(x => x >= 10).map(x => x*2).reduce((total, x) => total + x, 0);
 
 allgreaterthan10 = [11, 12, 13, 14].every(x => x > 10)
 console.log(allgreaterthan10)
@@ -241,7 +241,7 @@ for (numero of numeros) {
 
 const noms = ['Anna', 'Bernat', 'Clara']
 
-for (nom in noms) {1
+for (let nom in noms) {1
   console.log(nom, noms[nom])
 }
 
@@ -301,7 +301,8 @@ mostrarResultadoPromesa();
 // Nivell 2 Exercici 5
 
 try {
-  mostrarResultadoPromesa();
+  const resultadoFinal = await mostrarResultadoPromesa();
+  console.log('Resultado final:', resultadoFinal);
 }
 catch (error) {
   console.log('Error:', error);
@@ -322,6 +323,7 @@ function promesa2() {
     setTimeout(() => {
       resolve('Resultado de la promesa 2');
     }, 3000);
+
   });
 }
 
