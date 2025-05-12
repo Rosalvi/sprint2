@@ -28,7 +28,7 @@ console.log('random', randomNumber());
 const person = new Person('John');
 console.log('greet', person.greet());
 printNumbers(numbers);
-saludo;
+saludoTimer;
 
 // Operador Ternari
 
